@@ -17,21 +17,21 @@ final class EnvDbConfigProvider implements DbConfigProvider
     public function __construct()
     {
         if (!isset(
-            $_ENV['PHPOOP_DB_HOST'],
-            $_ENV['PHPOOP_DB_NAME'],
-            $_ENV['PHPOOP_DB_USER'],
-            $_ENV['PHPOOP_DB_PASS'],
-            $_ENV['PHPOOP_DB_PORT']
+            $_ENV['database'],
+            $_ENV['demo'],
+            $_ENV['demo'],
+            $_ENV['demo'],
+            $_ENV['3306']
         )) {
             throw new InvalidDatabaseConfigurationException(
                 "La configuration de base de donnée fournie en variable d'environnement est invalide"
             );
         }
-        $this->host = $_ENV['PHPOOP_DB_HOST'];
-        $this->name = $_ENV['PHPOOP_DB_NAME'];
-        $this->user = $_ENV['PHPOOP_DB_USER'];
-        $this->pass = $_ENV['PHPOOP_DB_PASS'];
-        $this->port = (int)$_ENV['PHPOOP_DB_PORT'];
+        $this->host = $_ENV['database'];
+        $this->name = $_ENV['demo'];
+        $this->user = $_ENV['demo'];
+        $this->pass = $_ENV['demo'];
+        $this->port = (int)$_ENV['3306'];
     }
 
     public function host() : string
